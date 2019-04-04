@@ -1,16 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { fetchAuthor } from '../services/fetchAuthor'
+import { fetchSinglePost } from '../services/fetchPosts'
 
-const SinglePost = () => {
-    return (
-        <div>
-            <h3>SINGLE POST TITLE</h3>
+class SinglePost extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            post: {},
+            addres: "adresa",
+            author: {}
+        }
+    }
 
-            <h4>Author Name</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta officiis, labore ex hic provident qui quidem numquam ullam minima suscipit illo ipsum, rerum voluptates dolore incidunt debitis quisquam eius.
-            </p>
-        </div>
-    )
+    componentDidMount() {
+        this.resolveSinglePost()
+    }
+
+    resolveSinglePost() {
+        fetchSinglePost(this.props)
+            .then((post) => {
+                this.setState({
+                    post: post
+                })
+                fetchAuthor(post.userId)
+                    .then((user) => {
+                        this.setState({
+                            author: user
+                        })
+                    })
+            })
+
+    }
+
+    render() {
+        return (
+            <>
+
+                <div >
+                    <Link to="/">Back</Link>
+                    <h2>{this.state.post.title}</h2>
+
+                    <h4 className="singlePost"><Link to={`/singleauthor${this.state.author.id}`}>{this.state.author.name}</Link></h4>
+                    <p>{this.state.post.body}</p>
+                </div>
+            </>
+        );
+    }
 }
-
 export default SinglePost

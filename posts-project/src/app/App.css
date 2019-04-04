@@ -6,6 +6,7 @@
 
 header {
   margin-bottom: 2%;
+  background: lightblue;
 }
 
 ul {
@@ -20,17 +21,27 @@ li{
 
 main h2, h3 {
   text-align: center;
+ 
 }
 
 .postItem {
   border-bottom: solid 1px gray;
+
 }
+
 
 .postItem h3 {
   text-align: left;
+
+  
 }
 
 footer {
   margin-top: 2%;
+  text-align: center;
+  background: lightblue;
+}
+
+.singlePost {
   text-align: center;
 }
