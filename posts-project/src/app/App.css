@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin-bottom: 2%;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li{
+  font-size: 1.2em;
+  margin-left: 2%;
+}
+
+main h2, h3 {
+  text-align: center;
+}
+
+.postItem {
+  border-bottom: solid 1px gray;
+}
+
+.postItem h3 {
+  text-align: left;
+}
+
+footer {
+  margin-top: 2%;
+  text-align: center;
+}
