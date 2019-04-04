@@ -10,7 +10,7 @@ const Main = () => {
     return (
         <main>
             <Switch>
-                <Route path="/singleauthor" component={SingleAuthor}></Route>
+                <Route path="/singleauthor/" component={SingleAuthor}></Route>
                 <Route path="/singlepost/:id" component={SinglePost}></Route>
                 <Route path="/about" component={About}></Route>
                 <Route path="/authors" component={Authors}></Route>

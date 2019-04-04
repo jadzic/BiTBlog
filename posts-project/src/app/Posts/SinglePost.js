@@ -41,7 +41,7 @@ class SinglePost extends Component {
                     <Link to="/">Back</Link>
                     <h2>{this.state.post.title}</h2>
 
-                    <h4 className="singlePost"><Link to={`/singleauthor${this.state.author.id}`}>{this.state.author.name}</Link></h4>
+                    <h4 className="singlePost"><Link to={`/singleauthor/${this.state.author.id}`}>{this.state.author.name}</Link></h4>
                     <p>{this.state.post.body}</p>
                 </div>
             </>
